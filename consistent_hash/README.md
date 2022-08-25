@@ -2,7 +2,7 @@
 
 Consistent Hashing is a distributed hashing scheme that operates independently
 of the number of servers or objects in a distributed hash
-table[1](https://www.toptal.com/big-data/consistent-hashing). The idea was
+table[[1](https://www.toptal.com/big-data/consistent-hashing)]. The idea was
 introduced in a paper from 1997: [Consistent hashing and random trees:
 distributed caching protocols for relieving hot spots on the World Wide
 Web](https://www.cs.princeton.edu/courses/archive/fall09/cos518/papers/chash.pdf)
