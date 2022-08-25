@@ -38,7 +38,7 @@ def run(words):
   to the store, the selected hash scheme is used to determine where to place
   the records.
   """
-  my_hash = ModHash()
+  my_hash = CHash()
   my_store = Store(my_hash)
   
   
