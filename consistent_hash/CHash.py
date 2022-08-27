@@ -14,6 +14,7 @@ import hashlib
 
 class CHash(HashScheme):
     def __init__(self):
+        self.scheme_name = 'Consistent_Hash'
         self.nodes = {}
 
     def __get_hash(self, value):

@@ -51,6 +51,10 @@ class Store:
         """
         Creates a new node in the datastore. Once the node is created, a number
         of resources have to be migrated to conform to the hash schema.
+
+        Important: Notice that this method is designed to work with a
+        consistent hash. You may need to adjust it to make it work with modular
+        hash. Hash_generator has a member "scheme_name" that you can use.
         """
         prev_node = self.hash_generator.hash(new_node)
 
@@ -78,6 +82,10 @@ class Store:
         Removes a node from the datastore. When a node is removed, a number
         of resources (that were stored in that node) have to be migrated to
         conform to the hash schema.
+
+        Important: Notice that this method is designed to work with a
+        consistent hash. You may need to adjust it to make it work with modular
+        hash. Hash_generator has a member "scheme_name" that you can use.
         """
         rc = self.hash_generator.remove_node(node)
         if rc == 0:

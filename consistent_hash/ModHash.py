@@ -20,6 +20,7 @@ class ModHash(HashScheme):
         """
         You have to decide what members to add to the class
         """
+        self.scheme_name = 'Modular_Hash'
         pass
 
     def dump(self):
@@ -30,13 +31,17 @@ class ModHash(HashScheme):
 
     def add_node(self, new_node):
         """
-        Possibly just increment a counter of number of nodes
+        Possibly just increment a counter of number of nodes. You may also
+        need to update Store to react in certain way depending on the
+        scheme_name.
         """
         pass
 
     def remove_node(self, node):
         """
-        Possibly just decrement a counter of number of nodes
+        Possibly just decrement a counter of number of nodes. You may also
+        need to update Store to react in certain way depending on the
+        scheme_name.
         """
         pass
 
