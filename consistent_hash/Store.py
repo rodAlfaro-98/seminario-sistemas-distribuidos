@@ -41,6 +41,7 @@ class Store:
         datastore.
         """
         print("===== STORE =====")
+        print("Using scheme: {0}".format(self.hash_generator.get_name()))
         self.hash_generator.dump()
         for node in self.nodes.keys():
             print('[{0} ({1} items)]'.format(self.nodes[node].name, len(self.nodes[node].resources)))

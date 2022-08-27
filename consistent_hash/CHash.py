@@ -14,7 +14,7 @@ import hashlib
 
 class CHash(HashScheme):
     def __init__(self):
-        self.scheme_name = 'Consistent_Hash'
+        self.__scheme_name = 'Consistent_Hash'
         self.nodes = {}
 
     def __get_hash(self, value):
@@ -22,6 +22,9 @@ class CHash(HashScheme):
         Calculates an initial hash using md5.
         """
         return int(hashlib.md5(value.encode()).hexdigest(),16) % 10000
+
+    def get_name(self):
+        return self.__scheme_name
 
     def dump(self):
         """

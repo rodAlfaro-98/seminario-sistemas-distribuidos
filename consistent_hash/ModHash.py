@@ -20,8 +20,11 @@ class ModHash(HashScheme):
         """
         You have to decide what members to add to the class
         """
-        self.scheme_name = 'Modular_Hash'
+        self.__scheme_name = 'Modular_Hash'
         pass
+
+    def get_name(self):
+        return self.__scheme_name
 
     def dump(self):
         """

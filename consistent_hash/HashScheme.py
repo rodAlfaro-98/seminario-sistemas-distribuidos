@@ -13,6 +13,10 @@ This is an abstract class for Hash schemes.
 class HashScheme(ABC):
 
     @abstractmethod
+    def get_name(self):
+        pass
+
+    @abstractmethod
     def dump(self):
         pass
 
