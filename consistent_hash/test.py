@@ -38,17 +38,21 @@ def run(words):
   to the store, the selected hash scheme is used to determine where to place
   the records.
   """
-  my_hash = CHash()
+  my_hash = ModHash()
   my_store = Store(my_hash)
   
   
   """
   Add three nodes to the Store
   """
-  my_store.add_node("Node 1")
-  my_store.add_node("Node 2")
-  my_store.add_node("Node 3")
-  
+
+  print("\n\n\n\tAdd method\n\n")
+  migraciones = my_store.add_node("Node 1")
+  migraciones = my_store.add_node("Node 2")
+  migraciones = my_store.add_node("Node 3")
+
+
+  print("\n\n\n\tDump method\n\n")
   my_store.dump()
   
 
@@ -58,6 +62,7 @@ def run(words):
   for word in words:
       my_store.add_resource(word)
   
+  print("\n\n\n\tDump method\n\n")
   my_store.dump()
 
 
@@ -65,7 +70,9 @@ def run(words):
   Remove one node from the Store. Stored objects need to be migrated to the
   remaining nodes.
   """
-  my_store.remove_node("Node 1")
+  print("\n\n\n\tRemove method\n\n")
+  migraciones = my_store.remove_node("Node 1")
+  print("Número de migraciones: {0}".format(migraciones))
   my_store.dump()
 
 
@@ -73,8 +80,9 @@ def run(words):
   Add the node back to the Store. Objects need to be migrated to conform to the
   Hash scheme.
   """
-  my_store.add_node("Node 1")
+  migraciones = my_store.add_node("Node 1")
   my_store.dump()
+  print("Número de migraciones: {0}".format(migraciones))
 
 
 

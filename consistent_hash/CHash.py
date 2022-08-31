@@ -38,8 +38,10 @@ class CHash(HashScheme):
         Adds a new node to the ring.
         """
         hash_value = self.__get_hash(new_node)
+        print("Hash {0} new_node {1}".format(hash_value,new_node))
         if hash_value not in self.nodes.keys():
             self.nodes[hash_value] = new_node
+            print(self.nodes)
             return 0
         return 1
 

@@ -15,13 +15,13 @@ from HashScheme import HashScheme
 import hashlib
 
 class ModHash(HashScheme):
-
+    
     def __init__(self):
         """
         You have to decide what members to add to the class
         """
         self.__scheme_name = 'Modular_Hash'
-        pass
+        self.nodes = 0
 
     def get_name(self):
         return self.__scheme_name
@@ -30,7 +30,7 @@ class ModHash(HashScheme):
         """
         Auxiliary method to print out information about the hash
         """
-        pass
+        print("Elementos: {0}".format(self.nodes))
 
     def add_node(self, new_node):
         """
@@ -38,7 +38,7 @@ class ModHash(HashScheme):
         need to update Store to react in certain way depending on the
         scheme_name.
         """
-        pass
+        self.nodes += 1
 
     def remove_node(self, node):
         """
@@ -46,10 +46,11 @@ class ModHash(HashScheme):
         need to update Store to react in certain way depending on the
         scheme_name.
         """
-        pass
+        self.nodes -= 1
 
     def hash(self, value):
         """
         Convert value to a number representation and then obtain mod(number_of_nodes)
         """
-        pass
+        #print(self.nodes)
+        return (int(hashlib.md5(value.encode()).hexdigest(),16) % 10000) % self.nodes
